@@ -225,7 +225,7 @@ class AuthenticationService {
   // Refresh Token
   async refreshToken(token) {
     try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
       const user = await User.findById(decoded.id);
       if (!user) throw new Error('User not found');
       
@@ -243,7 +243,7 @@ class AuthenticationService {
       expiresIn: '15m'
     });
     
-    const refreshToken = jwt.sign(payload, process.env.JWT_SECRET, {
+    const refreshToken = jwt.sign(payload, process.env.JWT_REFRESH_SECRET, {
       expiresIn: '7d'
     });
 

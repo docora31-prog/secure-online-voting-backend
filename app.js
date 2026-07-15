@@ -25,8 +25,7 @@ const requiredEnv = [
   'JWT_REFRESH_SECRET',
   'AI_SERVICE_URL',
   'CLIENT_URL',
-  'NODE_ENV',
-  'COOKIE_SECRET'
+  'NODE_ENV'
 ];
 
 // In development or if MONGO_URI is used instead of MONGODB_URI
